@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.flamingo.elektrohjelpen.Resistans">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/ohmVolt"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/radioOhm2"
+        android:layout_alignStart="@+id/radioOhm2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/ohmAmpere"
+        android:layout_below="@+id/ohmVolt"
+        android:layout_toEndOf="@+id/radioOhm2"
+        android:layout_alignLeft="@+id/ohmVolt"
+        android:layout_alignStart="@+id/ohmVolt" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/ohmWatt"
+        android:layout_below="@+id/ohmAmpere"
+        android:layout_alignLeft="@+id/ohmAmpere"
+        android:layout_alignStart="@+id/ohmAmpere" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Kalkuler"
+        android:id="@+id/wattKalkuler"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Volt"
+        android:id="@+id/textView16"
+        android:layout_alignBaseline="@+id/ohmVolt"
+        android:layout_alignBottom="@+id/ohmVolt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ampere"
+        android:id="@+id/textView17"
+        android:layout_alignBaseline="@+id/ohmAmpere"
+        android:layout_alignBottom="@+id/ohmAmpere"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Watt"
+        android:id="@+id/textView18"
+        android:layout_alignBaseline="@+id/ohmWatt"
+        android:layout_alignBottom="@+id/ohmWatt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volt og ampere"
+        android:id="@+id/radioOhm1"
+        android:layout_below="@+id/ohmWatt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:checked="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volt og Watt"
+        android:id="@+id/radioOhm2"
+        android:layout_alignBottom="@+id/radioOhm1"
+        android:layout_toRightOf="@+id/radioOhm1"
+        android:layout_toEndOf="@+id/radioOhm1"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watt og Ampere"
+        android:id="@+id/radioButton3"
+        android:checked="false"
+        android:layout_alignTop="@+id/radioOhm2"
+        android:layout_toRightOf="@+id/radioOhm2"
+        android:layout_toEndOf="@+id/radioOhm2" />
+</RelativeLayout>
