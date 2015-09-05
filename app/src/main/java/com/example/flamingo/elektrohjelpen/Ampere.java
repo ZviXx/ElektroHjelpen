@@ -39,14 +39,13 @@ public class Ampere extends AppCompatActivity {
 
         ampereKalkuler = (Button) findViewById(R.id.ampereKalkuler);
 
-        final NumberFormat printSumAmpereWattOhm = NumberFormat.getNumberInstance();
-        final NumberFormat printSumAmpereVoltOhm = NumberFormat.getNumberInstance();
-        final NumberFormat printSumAmpereWattVolt = NumberFormat.getNumberInstance();
+        final NumberFormat nm = NumberFormat.getNumberInstance();
+        
 
         ampereKalkuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //Lager objekter til ID fra XML
+                    
                     ampereVolt = (EditText) findViewById(R.id.ampereVolt);
                     ampereWatt = (EditText) findViewById(R.id.ampereWatt);
                     ampereOhm = (EditText) findViewById(R.id.ampereResistans);
@@ -62,7 +61,7 @@ public class Ampere extends AppCompatActivity {
 
                         sumAmpereWattOhm = Math.sqrt(ampereWattNummer/ampereOhmNummer);
 
-                        ampereSum.setText(printSumAmpereWattOhm.format(sumAmpereWattOhm));
+                        ampereSum.setText(nm.format(sumAmpereWattOhm));
 
                     }
 
@@ -79,19 +78,17 @@ public class Ampere extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+    
         getMenuInflater().inflate(R.menu.menu_ampere, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        
         if (id == action_settings) {
             return true;
         }
